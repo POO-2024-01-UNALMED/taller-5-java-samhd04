@@ -10,22 +10,15 @@ public class Anfibio extends Animal {
 	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
-	private String nombre;
-	private int edad;
-	private String habitat;
-	private String genero;
-	
+
 	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
-		this.nombre = nombre;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.colorPiel = colorPiel;
 		this.venenoso = venenoso;
 	}
 
 	public Anfibio() {
-		
+		this(null, 0, null, null, null, false);
 	}
 	
 	public static Anfibio crearRana(String nombre, int edad, String genero) {
@@ -56,37 +49,5 @@ public class Anfibio extends Animal {
 
 	public void setVenenoso(boolean venenoso) {
 		this.venenoso = venenoso;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	public int getEdad() {
-		return edad;
-	}
-	
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-	
-	public String getHabitat() {
-		return genero;
-	}
-	
-	public void setHabitat(String habitat) {
-		this.habitat = habitat;
-	}
-	
-	public String getGenero() {
-		return genero;
-	}
-	
-	public void setGenero(String genero) {
-		this.genero = genero;
 	}
 }

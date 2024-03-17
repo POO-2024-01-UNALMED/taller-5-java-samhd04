@@ -9,22 +9,14 @@ public class Ave extends Animal {
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
-	private String nombre;
-	private int edad;
-	private String habitat;
-	private String genero;
-	
 	
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) 	{
-		this.nombre = nombre;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.colorPlumas = colorPlumas;
 	}
 	
 	public Ave() {
-		
+		this(null, 0, null, null, null);
 	}
 	
 	public static Ave crearHalcon(String nombre, int edad, String genero) {
@@ -49,35 +41,5 @@ public class Ave extends Animal {
 		this.colorPlumas = colorPlumas;
 	}
 	
-	public String getNombre() {
-		return nombre;
-	}
 	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	public int getEdad() {
-		return edad;
-	}
-	
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-	
-	public String getHabitat() {
-		return genero;
-	}
-	
-	public void setHabitat(String habitat) {
-		this.habitat = habitat;
-	}
-	
-	public String getGenero() {
-		return genero;
-	}
-	
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
 }
