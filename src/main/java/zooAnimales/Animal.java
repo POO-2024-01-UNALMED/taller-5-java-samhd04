@@ -29,10 +29,10 @@ public class Animal {
 	
 	public static String totalPorTipo() {
 		
-		return "Mamiferos: " + Mamifero.getListado().size() + "\r\n" 
-		+ "Aves: " + Ave.getListado().size() + "\r\n" 
-		+ "Reptiles: " + Reptil.getListado().size() + "\r\n" 
-		+ "Peces: " + Pez.getListado().size() + "\r\n" 
+		return "Mamiferos: " + Mamifero.getListado().size() + "\n" 
+		+ "Aves: " + Ave.getListado().size() + "\n" 
+		+ "Reptiles: " + Reptil.getListado().size() + "\n" 
+		+ "Peces: " + Pez.getListado().size() + "\n" 
 		+ "Anfibios: " + Anfibio.getListado().size();
 	}
 	
@@ -42,14 +42,14 @@ public class Animal {
 			return "Mi nombre es " + getNombre() 
 					+ ", tengo una edad de " 
 					+ getEdad() + ", habito en " 
-					+ getHabitat() + "y mi genero es " 
+					+ getHabitat() + " y mi genero es " 
 					+ getGenero();
 		} else {
 			return "Mi nombre es " + getNombre() 
 					+ ", tengo una edad de " 
 					+ getEdad() + ", habito en " 
-					+ getHabitat() + "y mi genero es " 
-					+ getGenero() + "la zona en la que me ubico es " 
+					+ getHabitat() + " y mi genero es " 
+					+ getGenero() + " la zona en la que me ubico es " 
 					+ getZona().getNombre() + ", en el " + getZona().getZoo().getNombre();
 		}
 		
