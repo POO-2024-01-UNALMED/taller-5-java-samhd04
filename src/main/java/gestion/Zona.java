@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import zooAnimales.Animal;
 
 public class Zona {
-	public String nombre;
-	public Zoologico zoo;
-	public ArrayList<Animal> animales = new ArrayList<Animal>();
+	private String nombre;
+	private Zoologico zoo;
+	private ArrayList<Animal> animales = new ArrayList<Animal>();
 	
-	public Zona(String nombre, Zoologico zoo, ArrayList<Animal> animales) {
+	public Zona(String nombre, Zoologico zoo) {
 		
 	}
 	
@@ -23,5 +23,25 @@ public class Zona {
 	
 	public int cantidadAnimales() {
 		return animales.size();
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Zoologico getZoo() {
+		return zoo;
+	}
+
+	public void setZoo(Zoologico zoo) {
+		this.zoo = zoo;
+	}
+	
+	public ArrayList<Animal> getAnimales() {
+		return animales;
 	}
 }

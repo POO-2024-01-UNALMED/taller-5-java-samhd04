@@ -6,22 +6,22 @@ import gestion.Zona;
 import gestion.Zoologico;
 
 public class Animal {
-	int totalAnimales;
-	String nombre;
-	int edad;
-	String habitat;
-	String genero;
-	ArrayList<Zona> zona = new ArrayList<Zona>();
+	private static int totalAnimales;
+	private String nombre;
+	private int edad;
+	private String habitat;
+	private String genero;
+	private static ArrayList<Zona> zona = new ArrayList<Zona>();
 	
 	public Animal(String nombre, int edad, String habitat, String genero) {
-		totalAnimales++;
+		Animal.totalAnimales++;
 	}
 
 	public Animal() {
-		totalAnimales++;
+		Animal.totalAnimales++;
 	}
 	
-	public void totalPorTipo() {
+	public static void totalPorTipo() {
 		int Mamiferos = 0;
 		int Aves = 0;
 		int Reptiles = 0;
@@ -29,24 +29,24 @@ public class Animal {
 		int Anfibios = 0;
 		
 		for(int i = 0; i < zona.size(); i++) {
-			for(int j = 0; j < zona.get(i).animales.size(); j++) {
-				if(zona.get(i).animales.get(j) instanceof Anfibio) {
+			for(int j = 0; j < zona.get(i).getAnimales().size(); j++) {
+				if(zona.get(i).getAnimales().get(j) instanceof Anfibio) {
 					Anfibios = Anfibios + 1;
 				}
 				
-				if(zona.get(i).animales.get(j) instanceof Pez) {
+				if(zona.get(i).getAnimales().get(j) instanceof Pez) {
 					Peces = Peces + 1;
 				}
 				
-				if(zona.get(i).animales.get(j) instanceof Reptil) {
+				if(zona.get(i).getAnimales().get(j) instanceof Reptil) {
 					Reptiles = Reptiles + 1;
 				}
 				
-				if(zona.get(i).animales.get(j) instanceof Ave) {
+				if(zona.get(i).getAnimales().get(j) instanceof Ave) {
 					Aves = Aves + 1;
 				}
 				
-				if(zona.get(i).animales.get(j) instanceof Mamifero) {
+				if(zona.get(i).getAnimales().get(j) instanceof Mamifero) {
 					Mamiferos = Mamiferos + 1;
 				}
 			}
@@ -64,11 +64,11 @@ public class Animal {
 		Zoologico zoo = null;
 		
 		for(int i = 0; i < zona.size(); i++) {
-			for(int j = 0; j < zona.get(i).animales.size(); j++) {
-				if(zona.get(i).animales.get(j) == this) {
+			for(int j = 0; j < zona.get(i).getAnimales().size(); j++) {
+				if(zona.get(i).getAnimales().get(j) == this) {
 					nuevaZona = zona.get(i);
-					zoo = zona.get(i).zoo;
-					return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat + "y mi genero es " + genero + ", la zona en la que me ubico es " + nuevaZona.nombre + ", en el " + zoo.nombre;
+					zoo = zona.get(i).getZoo();
+					return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat + "y mi genero es " + genero + ", la zona en la que me ubico es " + nuevaZona.getNombre() + ", en el " + zoo.getNombre();
 				}
 			}
 			
@@ -83,29 +83,65 @@ public class Animal {
 		String movimiento = null;
 		
 		for(int i = 0; i < zona.size(); i++) {
-			for(int j = 0; j < zona.get(i).animales.size(); j++) {
-				if(zona.get(i).animales.get(j) == this && this instanceof Mamifero) {
+			for(int j = 0; j < zona.get(i).getAnimales().size(); j++) {
+				if(zona.get(i).getAnimales().get(j) == this && this instanceof Mamifero) {
 					movimiento = "desplazarse";
 				}
 				
-				if(zona.get(i).animales.get(j) == this && this instanceof Ave) {
+				if(zona.get(i).getAnimales().get(j) == this && this instanceof Ave) {
 					movimiento = "volar";
 				}
 				
-				if(zona.get(i).animales.get(j) == this && this instanceof Reptil) {
+				if(zona.get(i).getAnimales().get(j) == this && this instanceof Reptil) {
 					return "reptar";
 				}
 				
-				if(zona.get(i).animales.get(j) == this && this instanceof Pez) {
+				if(zona.get(i).getAnimales().get(j) == this && this instanceof Pez) {
 					return "nadar";
 				}
 				
-				if(zona.get(i).animales.get(j) == this && this instanceof Anfibio) {
+				if(zona.get(i).getAnimales().get(j) == this && this instanceof Anfibio) {
 					return "Saltar";
 				}
 			}
 		}
 		
 		return movimiento;
+	}
+	
+	public int getTotalAnimales() {
+		return Animal.totalAnimales;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+	
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	
+	public String getHabitat() {
+		return genero;
+	}
+	
+	public void setHabitat(String habitat) {
+		this.habitat = habitat;
+	}
+	
+	public String getGenero() {
+		return genero;
+	}
+	
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 }
