@@ -10,9 +10,19 @@ public class Mamifero extends Animal {
 	public static int leones;
 	private boolean pelaje;
 	private int patas;
+	private String nombre;
+	private int edad;
+	private String habitat;
+	private String genero;
+	
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
-		
+		this.nombre = nombre;
+		this.edad = edad;
+		this.habitat = habitat;
+		this.genero = genero;
+		this.pelaje = pelaje;
+		this.patas = patas;
 	}
 	
 	public Mamifero() {

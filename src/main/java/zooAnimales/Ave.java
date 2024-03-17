@@ -9,9 +9,18 @@ public class Ave extends Animal {
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
+	private String nombre;
+	private int edad;
+	private String habitat;
+	private String genero;
+	
 	
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) 	{
-		
+		this.nombre = nombre;
+		this.edad = edad;
+		this.habitat = habitat;
+		this.genero = genero;
+		this.colorPlumas = colorPlumas;
 	}
 	
 	public Ave() {
