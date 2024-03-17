@@ -24,7 +24,6 @@ public class Animal {
 
 	public Animal() {
 		this(null, 0, null, null);
-		this.zona = null;
 		Animal.totalAnimales++;
 	}
 	
@@ -40,36 +39,24 @@ public class Animal {
 	public String toString() {
 		
 		if(getZona() == null) {
-			return "Mi nombre es " + nombre 
+			return "Mi nombre es " + getNombre() 
 					+ ", tengo una edad de " 
-					+ edad + ", habito en " 
-					+ habitat + "y mi genero es " 
-					+ genero;
+					+ getEdad() + ", habito en " 
+					+ getHabitat() + "y mi genero es " 
+					+ getGenero();
 		} else {
-			return "Mi nombre es " + nombre 
+			return "Mi nombre es " + getNombre() 
 					+ ", tengo una edad de " 
-					+ edad + ", habito en " 
-					+ habitat + "y mi genero es " 
-					+ genero + "la zona en la que me ubico es " 
-					+ zona.getNombre() + ", en el " + zona.getZoo();
+					+ getEdad() + ", habito en " 
+					+ getHabitat() + "y mi genero es " 
+					+ getGenero() + "la zona en la que me ubico es " 
+					+ getZona().getNombre() + ", en el " + getZona().getZoo().getNombre();
 		}
 		
 	}
 	
 	public String movimiento() {
-		if(this instanceof Mamifero) {
-			return "desplazarse";
-		}else if(this instanceof Ave) {
-			return "volar";
-		}else if(this instanceof Reptil) {
-			return "reptar";
-		}else if(this instanceof Pez) {
-			return "nadar";
-		}else if(this instanceof Anfibio) {
-			return "saltar";
-		}else {
-			return null;
-		}
+		return "desplazarse";
 	}
 	
 	public static int getTotalAnimales() {

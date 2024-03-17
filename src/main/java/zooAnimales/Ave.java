@@ -20,6 +20,10 @@ public class Ave extends Animal {
 		this(null, 0, null, null, null);
 	}
 	
+	public String movimiento() {
+		return "volar";
+	}
+	
 	public static Ave crearHalcon(String nombre, int edad, String genero) {
 		Ave.halcones++;
 		return new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
