@@ -84,7 +84,7 @@ public class Animal {
 	}
 	
 	public String getHabitat() {
-		return genero;
+		return habitat;
 	}
 	
 	public void setHabitat(String habitat) {
