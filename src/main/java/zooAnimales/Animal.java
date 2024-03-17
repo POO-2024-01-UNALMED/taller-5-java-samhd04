@@ -21,7 +21,7 @@ public class Animal {
 		Animal.totalAnimales++;
 	}
 	
-	public static void totalPorTipo() {
+	public static String totalPorTipo() {
 		int Mamiferos = 0;
 		int Aves = 0;
 		int Reptiles = 0;
@@ -52,11 +52,7 @@ public class Animal {
 			}
 		}
 		
-		System.out.println("Mamiferos:" + Mamiferos);
-		System.out.println("Aves:" + Aves);
-		System.out.println("Reptiles:" + Reptiles);
-		System.out.println("Peces:" + Peces);
-		System.out.println("Anfibios:" + Anfibios);
+		return "Mamiferos: " + Mamiferos + "\r\n" + "Aves: " + Aves + "\r\n" + "Reptiles: " + Reptiles + "\r\n" + "Peces: " + Peces + "\r\n" + "Anfibios: " + Anfibios;
 	}
 	
 	public String toString() {
