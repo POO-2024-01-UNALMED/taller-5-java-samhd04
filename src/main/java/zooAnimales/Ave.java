@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Ave extends Animal {
-	ArrayList<Ave> listado = new ArrayList<Ave>();
+	private static ArrayList<Ave> listado = new ArrayList<Ave>();
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
@@ -13,6 +13,7 @@ public class Ave extends Animal {
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) 	{
 		super(nombre, edad, habitat, genero);
 		this.colorPlumas = colorPlumas;
+		listado.add(this);
 	}
 	
 	public Ave() {
@@ -41,5 +42,12 @@ public class Ave extends Animal {
 		this.colorPlumas = colorPlumas;
 	}
 	
+	public static ArrayList<Ave> getListado() {
+		return listado;
+	}
+	
+	public static void setListado(ArrayList<Ave> listado) {
+		Ave.listado = listado;
+	}
 	
 }

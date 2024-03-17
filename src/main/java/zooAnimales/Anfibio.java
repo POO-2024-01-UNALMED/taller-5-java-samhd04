@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Anfibio extends Animal {
-	ArrayList<Anfibio> listado = new ArrayList<Anfibio>();
+	private static ArrayList<Anfibio> listado = new ArrayList<Anfibio>();
 	public static int ranas;
 	public static int salamandras;
 	private String colorPiel;
@@ -15,6 +15,7 @@ public class Anfibio extends Animal {
 		super(nombre, edad, habitat, genero);
 		this.colorPiel = colorPiel;
 		this.venenoso = venenoso;
+		listado.add(this);
 	}
 
 	public Anfibio() {
@@ -49,5 +50,13 @@ public class Anfibio extends Animal {
 
 	public void setVenenoso(boolean venenoso) {
 		this.venenoso = venenoso;
+	}
+	
+	public static ArrayList<Anfibio> getListado() {
+		return listado;
+	}
+	
+	public static void setListado(ArrayList<Anfibio> listado) {
+		Anfibio.listado = listado;
 	}
 }

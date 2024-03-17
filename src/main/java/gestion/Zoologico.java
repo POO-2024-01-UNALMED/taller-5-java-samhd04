@@ -13,7 +13,7 @@ public class Zoologico {
 	}
 	
 	public Zoologico() {
-		
+		this(null, null);
 	}
 	
 	public int cantidadTotalAnimales() {
